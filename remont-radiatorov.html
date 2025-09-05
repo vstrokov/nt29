@@ -14,9 +14,12 @@
       <div class="header-container">
         <!-- Мобильная верхняя часть -->
         <div class="mobile-header-top">
-          <div class="logo">
-            <img src="./logo.svg" alt="Логотип компании" class="mobile-logo">
-          </div>
+  <div class="logo">
+    <!-- Оборачиваем логотип в ссылку на главную страницу -->
+    <a href="./index.html">
+      <img src="./logo.svg" alt="Логотип компании" class="mobile-logo">
+    </a>
+  </div>
           <button class="mobile-menu-toggle" id="menuToggle" aria-label="Открыть меню">
             <span></span>
             <span></span>
@@ -52,10 +55,10 @@
       </div>
       <!-- Мобильное меню -->
       <nav class="nav-mobile" id="mobileMenu">
-        <a href="#services">Услуги</a>
-        <a href="#gallery">Галерея</a>
-        <a href="#reviews">Отзывы</a>
-        <a href="#contact">Контакты</a>
+        <button class="mobile-menu-close" id="menuClose" aria-label="Закрыть меню">&times;</button>
+            <a href="remont-radiatorov.html">Ремонт радиаторов</a>
+            <a href="#gallery">Заправка автокондиционеров</a>
+            <a href="#reviews">Сварка аргоном</a>
       </nav>
     </header>
     <div class="order-form-container">

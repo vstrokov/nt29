@@ -174,59 +174,6 @@ function initFAQAccordion() {
     });
 }
 
-// Мобильное меню
-function initMobileMenu() {
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    if (!menuToggle || !mobileMenu) {
-        console.warn("Мобильное меню: Не найдены элементы #menuToggle или #mobileMenu.");
-        return;
-    }
-
-    // Используем aria-expanded для состояния кнопки
-    menuToggle.setAttribute('aria-expanded', 'false');
-
-    menuToggle.addEventListener('click', function (e) {
-        e.stopPropagation(); // Предотвращаем всплытие клика на document
-        const isExpanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', !isExpanded);
-        
-        // Переключаем отображение меню
-        if (mobileMenu.style.display === 'flex') {
-            mobileMenu.style.display = 'none';
-            this.classList.remove('active'); // Убираем класс для анимации иконки
-        } else {
-            mobileMenu.style.display = 'flex';
-            this.classList.add('active'); // Добавляем класс для анимации иконки
-        }
-    });
-
-    // Закрытие меню при клике вне его
-    document.addEventListener('click', function (e) {
-        // Если клик был не по кнопке меню и не по самому меню
-        if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
-            // Проверяем, открыто ли меню
-            if (mobileMenu.style.display === 'flex') {
-                menuToggle.setAttribute('aria-expanded', 'false');
-                mobileMenu.style.display = 'none';
-                menuToggle.classList.remove('active');
-            }
-        }
-    });
-
-     // Закрытие меню при изменении размера окна (если экран стал большим)
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) { // Предполагаем, что 768px - точка перехода
-             if (mobileMenu.style.display === 'flex') {
-                menuToggle.setAttribute('aria-expanded', 'false');
-                mobileMenu.style.display = 'none';
-                menuToggle.classList.remove('active');
-            }
-        }
-    });
-}
-
 // Подсветка активного пункта меню (если используется)
 function initActiveMenuLink() {
     const navLinks = document.querySelectorAll('.nav-desktop a, .nav-mobile a');
@@ -284,26 +231,86 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Если нужно, можно инициализировать другие компоненты здесь
 });
-document.addEventListener('DOMContentLoaded', function () {
-  const menuToggle = document.getElementById('menuToggle');
-  const menuClose = document.getElementById('menuClose'); // Новая кнопка
-  const mobileMenu = document.getElementById('mobileMenu');
+// --- Мобильное меню (Простая версия) ---
 
-  if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener('click', function () {
-      mobileMenu.classList.toggle('active');
-      this.classList.toggle('active');
-    });
-  }
+function initMobileMenu() {
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    // Находим кнопку закрытия внутри меню
+    const menuClose = document.getElementById('menuClose');
 
-  // Новый обработчик для кнопки закрытия
-  if (menuClose && mobileMenu) {
-    menuClose.addEventListener('click', function () {
-      mobileMenu.classList.remove('active');
-      // Также убираем класс active с иконки гамбургера, если она его имеет
-      if (menuToggle && menuToggle.classList.contains('active')) {
+    // Проверяем существование обязательных элементов
+    if (!menuToggle) {
+        console.warn("Мобильное меню: Не найден элемент #menuToggle.");
+        return;
+    }
+
+    // --- Функция для закрытия меню ---
+    function closeMenu() {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        if (mobileMenu) {
+            mobileMenu.classList.remove('active');
+        }
         menuToggle.classList.remove('active');
-      }
+    }
+
+    // --- Функция для открытия меню ---
+    function openMenu() {
+        menuToggle.setAttribute('aria-expanded', 'true');
+        if (mobileMenu) {
+            mobileMenu.classList.add('active');
+        }
+        menuToggle.classList.add('active');
+    }
+
+    // --- Привязываем события ---
+
+    // 1. Клик по кнопке гамбургера - переключает меню
+    menuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        if (isExpanded) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
     });
-  }
+
+    // 2. Клик по кнопке закрытия (id="menuClose") - закрывает меню
+    // Проверяем, существует ли кнопка закрытия
+    if (menuClose) {
+        menuClose.addEventListener('click', function(e) {
+            e.stopPropagation(); // Останавливаем всплытие, на всякий случай
+            closeMenu();
+        });
+    } else {
+        console.warn("Кнопка закрытия меню (id='menuClose') не найдена в HTML.");
+    }
+
+    // 3. Закрытие меню при клике вне его области (опционально, можно убрать если мешает)
+    document.addEventListener('click', function(e) {
+        if (mobileMenu && mobileMenu.classList.contains('active')) {
+            if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+                closeMenu();
+            }
+        }
+    });
+
+    // 4. Закрытие меню при ресайзе (опционально)
+    window.addEventListener('resize', function() {
+        if (mobileMenu && mobileMenu.classList.contains('active')) {
+            if (window.innerWidth > 768) {
+                closeMenu();
+            }
+        }
+    });
+}
+
+// --- Инициализация после загрузки DOM ---
+document.addEventListener('DOMContentLoaded', () => {
+    // Инициализируем параллакс
+    window.heroParallaxController = new HeroParallaxController();
+
+    // Инициализируем мобильное меню
+    initMobileMenu();
 });
