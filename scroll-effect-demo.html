@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Effect Demo</title>
+    <link rel="stylesheet" href="scroll-effect-styles.css">
+</head>
+<body>
+    <!-- Initial content to provide scroll space -->
+    <section class="intro-section">
+        <h1>Scroll Down to See the Effect</h1>
+        <p>This demo showcases a sophisticated scroll-triggered animation where an image scales and text content overlaps it smoothly.</p>
+    </section>
+
+    <!-- Main scroll effect container -->
+    <div class="scroll-container">
+        <!-- Image section that will scale -->
+        <div class="image-section" id="imageSection">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Mountain landscape" class="scaling-image" id="scalingImage">
+            <div class="image-overlay">
+                <h2>Beautiful Landscape</h2>
+            </div>
+        </div>
+
+        <!-- Text content that will overlap and attach -->
+        <div class="text-section" id="textSection">
+            <div class="text-content">
+                <h2>Overlapping Content</h2>
+                <p>This text content starts below the image but begins to overlap as you scroll. Once you've scrolled past 80% of the scaled image height, this content "attaches" to the image and they scroll together as one combined block.</p>
+                
+                <p>The transition is smooth and visually engaging, creating a sophisticated scroll experience without any layout jumps or glitches.</p>
+                
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Next section to demonstrate the effect -->
+    <section class="next-section">
+        <h2>Next Section</h2>
+        <p>This is the next section that appears after the combined scroll block. The transition should be seamless.</p>
+        <p>Continue scrolling to see more content and test the complete effect.</p>
+        
+        <div style="height: 100vh; background: linear-gradient(45deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white;">
+            <h3>End of Demo</h3>
+        </div>
+    </section>
+
+    <script src="scroll-effect-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+/* --- Секция карты --- */
+
+.map-section {
+  width: 100%;
+  background-color: #111418; /* Темный фон секции */
+  padding: 4rem 2rem; /* Внутренние отступы */
+  position: relative;
+  z-index: 5;
+  box-sizing: border-box;
+  /* Убираем border и box-shadow с секции */
+  /* border: none; */
+  /* box-shadow: none; */
+}
+
+/* Внутренний контейнер секции */
+.map-section-inner {
+  max-width: 1200px; /* Максимальная ширина содержимого */
+  margin: 0 auto; /* Центрирование внутреннего контейнера */
+  display: flex; /* Flexbox для размещения колонок */
+  gap: 2rem; /* Отступ между колонками */
+  box-sizing: border-box;
+}
+
+/* Контейнер для адреса */
+.address-container {
+  flex: 1; /* Занимает доступное пространство */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Центрируем содержимое по вертикали */
+  color: #e0e0e0; /* Цвет текста */
+  /* padding: 2rem; Отступы внутри контейнера адреса */
+  box-sizing: border-box;
+}
+
+/* Заголовок секции карты */
+.map-section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: white;
+  text-align: left; /* Выравнивание заголовка по левому краю */
+}
+
+/* Информация о контактах */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Отступы между элементами контактов */
+}
+
+/* Элемент контакта */
+.contact-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Метка контакта */
+.contact-label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1978e5; /* Цвет метки */
+}
+
+/* Значение контакта */
+.contact-value {
+  font-size: 1rem;
+  line-height: 1.5;
+  /* margin: 0 0 0.25rem 0;  */
+  color: #c0c0c0; /* Цвет значения */
+  text-decoration: none; /* Убираем подчеркивание по умолчанию */
+  transition: color 0.3s ease; /* Плавный переход цвета */
+}
+
+/* Ссылки на телефон, email, whatsapp */
+.phone-link:hover,
+.email-link:hover,
+.whatsapp-link:hover {
+  color: #1978e5; /* Цвет при наведении */
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+/* Текст адреса */
+.address-text {
+  font-style: normal; /* Убираем курсив у address */
+}
+
+/* Текст реквизитов */
+.requisites-text {
+  margin: 0; /* Убираем стандартные отступы у p */
+}
+
+/* Контейнер для карты */
+.map-container {
+  flex: 2; /* Занимает доступное пространство */
+  height: 450px; /* Фиксированная высота карты */
+  border-radius: 8px; /* Скругление углов */
+  overflow: hidden; /* Скрывает содержимое, выходящее за границы borderRadius */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Тень вокруг карты */
+  box-sizing: border-box;
+  /* position: relative; Если нужно абсолютное позиционирование внутри */
+}
+
+/* Контейнер Яндекс.Карты */
+#map-container {
+  width: 100% !important; /* Принудительно растягиваем на 100% ширины родителя */
+  height: 100% !important; /* Принудительно растягиваем на 100% высоты родителя */
+}
+
+/* Призыв к действию */
+.contact-cta {
+  margin-top: 2rem; /* Отступ сверху */
+}
+
+/* Кнопка призыва к действию */
+.contact-cta-button {
+  /* Наследуем стили из .hero-cta */
+  background-color: #1978e5;
+  color: white;
+  font-weight: bold;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: fit-content; /* Ширина по содержимому */
+}
+.contact-cta-button:hover {
+  background-color: #1565c0;
+  transform: translateY(-2px);
+}
+.contact-cta-button:active {
+  transform: translateY(0);
+}
+
+/* --- Адаптация для планшетов --- */
+@media (max-width: 1024px) {
+  .map-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .map-section-inner {
+    gap: 1.5rem;
+  }
+
+  .map-section-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-label {
+    font-size: 0.95rem;
+  }
+
+  .contact-value {
+    font-size: 1rem;
+  }
+
+  .map-container {
+    height: 400px;
+  }
+}
+
+/* --- Адаптация для мобильных устройств --- */
+@media (max-width: 768px) {
+  .map-section {
+    padding: 2rem 1rem;
+  }
+
+  /* Переключаем на вертикальное расположение: адрес сверху, карта снизу */
+  .map-section-inner {
+    flex-direction: column;
+    gap: 2rem; /* Увеличиваем отступ между блоками */
+  }
+
+  .address-container {
+    order: 1; /* Адресной блок сверху */
+    /* padding: 1.5rem; */
+  }
+
+  .map-container {
+    order: 2; /* Карта снизу */
+    height: 350px;
+    width: 100%;
+  }
+
+  .map-section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center; /* Центрируем заголовок на мобильных */
+  }
+
+  .contact-info {
+    gap: 1.25rem;
+  }
+
+  .contact-label {
+    font-size: 1rem;
+  }
+
+  .contact-value {
+    font-size: 1rem;
+  }
+
+  .contact-cta {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center; /* Центрируем кнопку на мобильных */
+  }
+
+  .contact-cta-button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* --- Адаптация для очень маленьких экранов --- */
+@media (max-width: 480px) {
+  .map-section {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .map-section-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-item {
+    gap: 0.25rem;
+  }
+
+  .contact-label {
+    font-size: 1rem;
+  }
+
+  .contact-value {
+    font-size: 1rem;
+  }
+
+  .map-container {
+    height: 300px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .contact-cta {
+    margin-top: 1.25rem;
+  }
+
+  .contact-cta-button {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* --- Адаптация для очень узких экранов --- */
+@media (max-width: 320px) {
+  .map-section {
+    padding: 1rem 0.5rem;
+  }
+
+  .map-section-title {
+    font-size: 1.1rem;
+  }
+
+  .contact-label {
+    font-size: 1rem;
+  }
+
+  .contact-value {
+    font-size: 1rem;
+  }
+
+  .map-container {
+    height: 250px;
+  }
+}

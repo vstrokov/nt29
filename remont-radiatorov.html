@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ремонт радиаторов в Архангельске</title>
+  <link rel="stylesheet" href="radiators-styles.css"> <!-- Подключаем отдельный CSS -->
+</head>
+
+<body class="page-loaded">
+  <div class="main-conteiner">
+    <header class="header">
+      <div class="header-container">
+        <!-- Мобильная верхняя часть -->
+        <div class="mobile-header-top">
+          <div class="logo">
+            <img src="./logo.svg" alt="Логотип компании" class="mobile-logo">
+          </div>
+          <button class="mobile-menu-toggle" id="menuToggle" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <!-- Надписи - используются и для десктопа, и для мобильной версии -->
+        <div class="hero-left">
+          <h1 class="hero-title">РEMOHT РАДИАТОРОВ</h1>
+          <p class="hero-subtitle">Пайка алюминия, латуни, меди. Без переплат. Выезд или
+            мастерская.<br><strong>Диагностика бесплатно</strong> — при заказе.</p>
+          <div class="hero-stats">
+            <div class="hero-stat-item">
+              <div class="hero-stat-value">12 000+</div>
+              <div class="hero-stat-label">Радиаторов починили</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="hero-stat-value">10 лет</div>
+              <div class="hero-stat-label">На рынке Архангельска</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Десктопная правая часть -->
+        <div class="header-right">
+          <a href="tel:+79991234567" class="header-phone">+7 (999) 123-45-67</a>
+          <nav class="nav-desktop">
+            <a href="#services">Ремонт радиаторов</a>
+            <a href="#gallery">Заправка автокондиционеров</a>
+            <a href="#reviews">Сварка аргоном</a>
+          </nav>
+        </div>
+      </div>
+      <!-- Мобильное меню -->
+      <nav class="nav-mobile" id="mobileMenu">
+        <a href="#services">Услуги</a>
+        <a href="#gallery">Галерея</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+    </header>
+    <div class="order-form-container">
+      <div class="form-header">
+        <div class="logo-form">
+          <img src="./logo.svg" alt="Логотип компании" class="logo-img-form">
+
+
+          <form class="call-order-form" id="callOrderForm">
+            <div class="form-group">
+              <label for="clientName" class="form-label">Ваше имя *</label>
+              <input type="text" id="clientName" name="clientName" class="form-input" placeholder="Введите ваше имя"
+                required>
+            </div>
+
+            <div class="form-group">
+              <label for="clientPhone" class="form-label">Номер телефона *</label>
+              <input type="tel" id="clientPhone" name="clientPhone" class="form-input" placeholder="+7 (___) ___-__-__"
+                required>
+            </div>
+
+            <div class="form-group">
+              <label for="serviceType" class="form-label">Выберите услугу *</label>
+              <select id="serviceType" name="serviceType" class="form-select" required>
+                <option value="">-- Выберите услугу --</option>
+                <option value="radiator-engine">Радиатор двигателя</option>
+                <option value="radiator-ac">Радиатор кондиционера</option>
+                <option value="radiator-oil">Масляный радиатор (АКПП)</option>
+                <option value="intercooler">Интеркулер / Турбина</option>
+              </select>
+            </div>
+
+            <button type="submit" class="form-submit-btn">Отправить заявку</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- === HERO SECTION === -->
+    <section class="hero-radiators">
+      <div class="hero-image-container">
+        <img src="./images/radiator-main.jpeg" alt="Ремонт радиаторов" class="hero-image">
+      </div>
+    </section>
+
+    <!-- Мобильная форма (появляется ниже) -->
+
+    <!-- === /HERO SECTION === -->
+
+    <!-- === TRUST SECTION === -->
+    <section class="trust-section">
+      <div class="container">
+        <h2 class="section-title">Нам доверяют 1200+ автовладельцев в Архангельске</h2>
+        <div class="trust-stats">
+          <!-- <div class="trust-stat-item">
+            <div class="trust-stat-icon">🛠️</div>
+            <div class="trust-stat-value">10 лет</div>
+            <div class="trust-stat-label">на рынке</div>
+          </div> -->
+          <div class="trust-stat-item">
+            <div class="trust-stat-icon">🔧</div>
+            <div class="trust-stat-value">12 000+</div>
+            <div class="trust-stat-label">отремонтированных радиаторов</div>
+          </div>
+          <div class="trust-stat-item">
+            <div class="trust-stat-icon">🏭</div>
+            <div class="trust-stat-value">Свой цех</div>
+            <div class="trust-stat-label">и оборудование</div>
+          </div>
+          <!-- <div class="trust-stat-item">
+            <div class="trust-stat-icon">💬</div>
+            <div class="trust-stat-value">97%</div>
+            <div class="trust-stat-label">положительных отзывов</div>
+          </div> -->
+          <div class="trust-stat-item">
+            <div class="trust-stat-icon">📦</div>
+            <div class="trust-stat-value">Есть запчасти</div>
+            <div class="trust-stat-label">в наличии</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- === /TRUST SECTION === -->
+
+    <!-- === TYPES SECTION === -->
+    <section class="types-section">
+      <div class="container">
+        <h2 class="section-title">Ремонтируем любые радиаторы</h2>
+        <div class="types-grid">
+          <div class="type-card">
+            <div class="type-image-container">
+              <img src="./images/radiator-menu.jpg"
+                alt="Радиатор двигателя" class="type-image">
+            </div>
+            <div class="type-content">
+              <h3 class="type-title">Радиатор двигателя</h3>
+              <p class="type-price">от 1500 ₽</p>
+              <p class="type-description">Трещины в бачках, дыры в трубках, повреждения ребер.</p>
+              <ul class="type-features">
+                <li>Алюминий, медь, латунь</li>
+                <li>Пайка без разборки</li>
+                <li>Гарантия 1 год</li>
+              </ul>
+            </div>
+          </div>
+          <div class="type-card">
+            <div class="type-image-container">
+              <img src="./images/radiator-menu.jpg"
+                alt="Радиатор кондиционера" class="type-image">
+            </div>
+            <div class="type-content">
+              <h3 class="type-title">Радиатор кондиционера</h3>
+              <p class="type-price">от 1800 ₽</p>
+              <p class="type-description">Утечки хладагента в сотах, трещины в бачках.</p>
+              <ul class="type-features">
+                <li>Работаем с R134a, R1234yf</li>
+                <li>Пайка без потери фреона</li>
+                <li>Гарантия 1 год</li>
+              </ul>
+            </div>
+          </div>
+          <div class="type-card">
+            <div class="type-image-container">
+              <img src="./images/radiator-menu.jpg"
+                alt="Масляный радиатор (АКПП)" class="type-image">
+            </div>
+            <div class="type-content">
+              <h3 class="type-title">Масляный радиатор (АКПП)</h3>
+              <p class="type-price">от 2200 ₽</p>
+              <p class="type-description">Трещины, утечки, коррозия.</p>
+              <ul class="type-features">
+                <li>Ремонт под давлением</li>
+                <li>Герметизация всех соединений</li>
+                <li>Гарантия 1 год</li>
+              </ul>
+            </div>
+          </div>
+          <div class="type-card">
+            <div class="type-image-container">
+              <img src="./images/radiator-menu.jpg"
+                alt="Интеркулер / Турбина" class="type-image">
+            </div>
+            <div class="type-content">
+              <h3 class="type-title">Интеркулер / Турбина</h3>
+              <p class="type-price">от 2500 ₽</p>
+              <p class="type-description">Повреждения ребер, трещины в корпусе.</p>
+              <ul class="type-features">
+                <li>Восстановление теплообмена</li>
+                <li>Пайка аргоном</li>
+                <li>Гарантия 1 год</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- === /TYPES SECTION === -->
+
+    <!-- === PROCESS SECTION === -->
+    <!-- <section class="process-section">
+      <div class="process-container">
+        <h2 class="section-title">Как починим ваш радиатор?</h2>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="process-step-number">1</div>
+            <img src="./images/radiator-main.jpeg" alt="Диагностика" class="process-step-image">
+            <h3 class="process-step-title">Диагностика</h3>
+            <p class="process-step-description">Найдём утечку за 15 минут с помощью тепловизора и теста под давлением.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="process-step-number">2</div>
+            <img src="./images/radiator-main.jpeg" alt="Пайка на TIG" class="process-step-image">
+            <h3 class="process-step-title">Пайка на TIG</h3>
+            <p class="process-step-description">Без перегрева, аккуратно, с использованием совместимых присадок.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-step-number">3</div>
+            <img src="./images/radiator-main.jpeg" alt="Проверка под давлением" class="process-step-image">
+            <h3 class="process-step-title">Проверка под давлением</h3>
+            <p class="process-step-description">Гарантируем отсутствие повторных утечек. Никаких "сюрпризов".</p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- === /PROCESS SECTION === -->
+    <section class="hero-main">
+      <div class="hero-section2">
+        <div class="hero-inner">
+          <div class="hero-text">
+            <h1 class="hero-title">Новейший подход к ремонту радиаторов</h1>
+            <p class="hero-description">
+              Мы используем передовые методы восстановления теплообменников, которые позволяют вернуть радиаторам до
+              100% эффективности.
+            </p>
+            <button class="hero-cta">Позвонить</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Блок hero-tagmain идет сразу после hero-main -->
+      <div class="hero-tagmain hero-main">
+        <div class="container">
+          <div class="repair-methods-section">
+            <div class="methods-grid">
+              <!-- Метод 1: Диагностика -->
+              <div class="method-card">
+                <div class="method-image-container">
+                  <img src="./images/rad0.jpg" alt="Диагностика тепловизором" class="method-image">
+                </div>
+                <div class="method-content">
+                  <h3 class="method-title">Диагностика тепловизором</h3>
+                  <p class="method-description">Точное определение зон утечки тепла и повреждений без разбора.</p>
+                </div>
+              </div>
+
+              <!-- Метод 2: Подготовка -->
+              <div class="method-card">
+                <div class="method-image-container">
+                  <img src="./images/rad1.jpg" alt="Подготовка радиатора" class="method-image">
+                </div>
+                <div class="method-content">
+                  <h3 class="method-title">Профессиональная подготовка</h3>
+                  <p class="method-description">Очистка, демонтаж секций, подготовка краев под сварку.</p>
+                </div>
+              </div>
+
+              <!-- Метод 3: Запайка аргоном -->
+              <div class="method-card">
+                <div class="method-image-container">
+                  <img src="./images/rad2.jpg" alt="Запайка аргоном" class="method-image">
+                </div>
+                <div class="method-content">
+                  <h3 class="method-title">Запайка аргоном</h3>
+                  <p class="method-description">Восстановление швов инертным газом для максимальной прочности.</p>
+                </div>
+              </div>
+
+              <!-- Метод 4: Монтаж -->
+              <div class="method-card">
+                <div class="method-image-container">
+                  <img src="./images/rad3.jpg" alt="Монтаж в автомобиль" class="method-image">
+                </div>
+                <div class="method-content">
+                  <h3 class="method-title">Монтаж в автомобиль</h3>
+                  <p class="method-description">Установка, опрессовка и проверка герметичности в вашем авто.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- === PRICING SECTION === -->
+    <section class="pricing-section">
+      <div class="container">
+        <h2 class="section-title">Сколько стоит ремонт?</h2>
+        <div class="pricing-table-container">
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th>Тип радиатора</th>
+                <th>Цена</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Двигателя (алюминий)</td>
+                <td class="price-cell">от 1500 ₽</td>
+              </tr>
+              <tr>
+                <td>Кондиционера</td>
+                <td class="price-cell">от 1800 ₽</td>
+              </tr>
+              <tr>
+                <td>Масляный (АКПП)</td>
+                <td class="price-cell">от 2200 ₽</td>
+              </tr>
+              <tr>
+                <td>Интеркулер</td>
+                <td class="price-cell">от 2500 ₽</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="text-align: center; margin-top: 1rem; font-size: 0.875rem; color: #9daab8;"><em>📌 Всё включено:
+            диагностика, пайка, проверка<br>🚫 Никаких "доплат за сложность"</em></p>
+      </div>
+    </section>
+    <!-- === /PRICING SECTION === -->
+
+    <!-- === GALLERY SECTION === -->
+    <section class="gallery-section">
+      <div class="container">
+        <h2 class="section-title">Реальные работы — без ретуши</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="./images/radiator-menu.jpg" alt="Работа 1"
+              class="gallery-image">
+            <div class="gallery-caption">Радиатор ВАЗ 2110, трещина в бачке — запаян за 40 мин</div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://placehold.co/400x300/1c2126/9daab8?text=Work+Photo+2" alt="Работа 2"
+              class="gallery-image">
+            <div class="gallery-caption">Интеркулер BMW X5 — восстановлен без замены</div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://placehold.co/400x300/1c2126/9daab8?text=Work+Photo+3" alt="Работа 3"
+              class="gallery-image">
+            <div class="gallery-caption">Радиатор кондиционера Kia Rio — утечка в сотах</div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://placehold.co/400x300/1c2126/9daab8?text=Work+Photo+4" alt="Работа 4"
+              class="gallery-image">
+            <div class="gallery-caption">Масляный радиатор Ford Transit — трещина в корпусе</div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://placehold.co/400x300/1c2126/9daab8?text=Work+Photo+5" alt="Работа 5"
+              class="gallery-image">
+            <div class="gallery-caption">Радиатор охлаждения LADA Granta — дыра в трубке</div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://placehold.co/400x300/1c2126/9daab8?text=Work+Photo+6" alt="Работа 6"
+              class="gallery-image">
+            <div class="gallery-caption">Интеркулер VW Passat — повреждение ребер</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- === REVIEWS SECTION === -->
+    <section class="reviews-section" id="reviews">
+      <div class="container">
+        <h2 class="section-title">Отзывы клиентов</h2>
+        <div class="reviews-carousel">
+          <div class="reviews-wrapper" id="reviewsContainer">
+            <!-- Отзывы с фото -->
+            <div class="review-card">
+              <div class="review-header">
+                <img src="./images/client1.jpg" alt="Александр Петров" class="review-avatar">
+                <div class="review-info">
+                  <div class="review-name">Александр Петров</div>
+                  <div class="review-meta">Газель, 2015 г.</div>
+                  <div class="review-rating">★★★★★</div>
+                </div>
+              </div>
+              <p class="review-text">«Радиатор дырявый — думал менять. Починили за 2 тыс., поставил — как новый!»</p>
+              <div class="review-car-photo">
+                <img src="./images/car1.jpg" alt="Газель с отремонтированным радиатором" class="car-image">
+              </div>
+            </div>
+
+            <div class="review-card">
+              <div class="review-header">
+                <img src="./images/client2.jpg" alt="Михаил Сидоров" class="review-avatar">
+                <div class="review-info">
+                  <div class="review-name">Михаил Сидоров</div>
+                  <div class="review-meta">Ford Transit, 2018 г.</div>
+                  <div class="review-rating">★★★★☆</div>
+                </div>
+              </div>
+              <p class="review-text">«Интеркулер течёт — цена замены 25к. Починили за 2800. Работает 2 сезона!»</p>
+              <div class="review-car-photo">
+                <img src="./images/car2.jpg" alt="Ford Transit с интеркулером" class="car-image">
+              </div>
+            </div>
+
+            <div class="review-card">
+              <div class="review-header">
+                <img src="./images/client3.jpg" alt="Иван Козлов" class="review-avatar">
+                <div class="review-info">
+                  <div class="review-name">Иван Козлов</div>
+                  <div class="review-meta">Трактор МТЗ</div>
+                  <div class="review-rating">★★★★★</div>
+                </div>
+              </div>
+              <p class="review-text">«Привезли с поля — сняли, починили, поставили. Спасибо за оперативность!»</p>
+              <div class="review-car-photo">
+                <img src="./images/car3.jpg" alt="Трактор МТЗ" class="car-image">
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews-navigation">
+            <button class="reviews-prev" id="prevReview">←</button>
+            <button class="reviews-next" id="nextReview">→</button>
+          </div>
+        </div>
+
+        <div class="all-reviews-link">
+          <a href="https://yandex.ru/maps/org/novyye_tekhnologii/177462280069/?ll=40.568987%2C64.531400&z=17.51"
+            target="_blank" class="show-all-reviews">
+            Смотреть все отзывы на Яндекс.Картах
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- === /REVIEWS SECTION === -->
+    <!-- Мобильная форма (будет показана после "Почему мы") -->
+    <section class="order-form-section-mobile">
+      <div class="container">
+        <div class="order-form-container">
+          <div class="form-header">
+            <div class="logo-form">
+              <img src="./logo.svg" alt="Логотип компании" class="logo-img-form">
+            </div>
+            <h2 class="form-title">Заказать звонок</h2>
+          </div>
+
+          <form class="call-order-form" id="callOrderFormMobile">
+            <div class="form-group">
+              <label for="clientNameMobile" class="form-label">Ваше имя</label>
+              <input type="text" id="clientNameMobile" name="clientName" class="form-input"
+                placeholder="Введите ваше имя" required>
+            </div>
+
+            <div class="form-group">
+              <label for="clientPhoneMobile" class="form-label">Номер телефона</label>
+              <input type="tel" id="clientPhoneMobile" name="clientPhone" class="form-input"
+                placeholder="+7 (___) ___-__-__" required>
+            </div>
+
+            <div class="form-group">
+              <label for="serviceTypeMobile" class="form-label">Выберите услугу</label>
+              <select id="serviceTypeMobile" name="serviceType" class="form-select" required>
+                <option value="">-- Выберите услугу --</option>
+                <option value="welding">Сварочные работы</option>
+                <option value="radiator">Ремонт радиаторов</option>
+                <option value="diagnostics">Заправка кондиционеров</option>
+              </select>
+            </div>
+
+            <button type="submit" class="form-submit-btn">Отправить заявку</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- === CONTACTS SECTION === -->
+    <section class="map-section" id="contact">
+      <div class="map-section-inner">
+        <!-- Контейнер для адреса -->
+        <div class="address-container">
+          <h2 class="map-section-title">Наши контакты</h2>
+          <div class="contact-info">
+            <div class="contact-item">
+              <h3 class="contact-label">Телефон</h3>
+              <a href="tel:+78182440929" class="contact-value phone-link">44-09-29</a>
+              <a href="https://wa.me/79115540929" class="contact-value whatsapp-link" target="_blank">WhatsApp: 8 (911)
+                554-09-29</a>
+            </div>
+            <div class="contact-item">
+              <h3 class="contact-label">Email</h3>
+              <a href="mailto:newtecnology29@yandex.ru" class="contact-value email-link">newtecnology29@yandex.ru</a>
+            </div>
+            <div class="contact-item">
+              <h3 class="contact-label">Адрес</h3>
+              <address class="contact-value address-text">
+                г. Архангельск,<br>
+                ул. Смольный буян, 20 к.4<br>
+                (таксопарк)
+              </address>
+            </div>
+            <div class="contact-item">
+              <h3 class="contact-label">Реквизиты</h3>
+              <p class="contact-value requisites-text">ИНН 2901302699<br>ОГРН 1202900005197</p>
+            </div>
+          </div>
+          <!-- <div class="contact-cta">
+        <button class="hero-cta contact-cta-button">Позвонить</button>
+      </div> -->
+        </div>
+
+        <!-- Контейнер для карты -->
+        <div class="map-container">
+          <div id="map-container" style="width: 100%; height: 100%; border-radius: 8px; overflow: hidden;">
+            <script type="text/javascript" charset="utf-8" async
+              src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A3c05715622e60bc9c9f46f22382fe272347bf9aaddb92910aac174809810d800&width=100%25&height=450&lang=ru_RU&scroll=true">
+              </script>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- === /CONTACTS SECTION === -->
+
+    <!-- === WARRANTY SECTION === -->
+    <section class="warranty-section">
+      <div class="container">
+        <h2 class="section-title">💯 Даём гарантию 12 месяцев</h2>
+        <p class="warranty-text">Если течь появится снова — <strong>починим бесплатно</strong>.<br>Мы уверены в качестве
+          своей работы.</p>
+        <div class="warranty-badge">Гарантия</div>
+      </div>
+    </section>
+    <!-- === /WARRANTY SECTION === -->
+
+    <!-- === FOOTER PLACEHOLDER (временно) === -->
+    <footer class="footer-placeholder">
+      <div class="container">
+        <p>&copy; 2024 "Новые Технологии". Все права защищены.</p>
+        <p>ИНН 2901302699 | ОГРН 1202900005197</p>
+      </div>
+    </footer>
+    <!-- === /FOOTER PLACEHOLDER === -->
+
+    <script src="radiators-scripts.js"></script> <!-- Подключаем отдельный JS -->
+
+</body>
+
+</html>

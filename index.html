@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Аргонная сварка в Архангельске</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script2.js"></script>
+</head>
+
+<body class="page-loaded">
+  
+    <header class="header">
+      <div class="header-container">
+        <!-- Мобильная верхняя часть -->
+        <div class="mobile-header-top">
+          <div class="logo">
+            <img src="./logo.svg" alt="Логотип компании" class="mobile-logo">
+          </div>
+          <button class="mobile-menu-toggle" id="menuToggle" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        <!-- Надписи - используются и для десктопа, и для мобильной версии -->
+        <div class="header-left">
+          <div class="header-brand">СВАРКА</div>
+          <div class="header-subtitle">МЕТАЛЛОВ</div>
+        </div>
+
+        <!-- Десктопная правая часть -->
+        <div class="header-right">
+          <a href="tel:+79991234567" class="header-phone">+7 (999) 123-45-67</a>
+          <nav class="nav-desktop">
+            <a href="#services">Ремонт радиаторов</a>
+            <a href="#gallery">Заправка автокондиционеров</a>
+            <a href="#reviews">Сварка аргоном</a>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Мобильное меню -->
+      <nav class="nav-mobile" id="mobileMenu">
+        <a href="#services">Услуги</a>
+        <a href="#gallery">Галерея</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+    </header>
+  
+  <div class="scroll-container">
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-image-container">
+        <img src="./images/mainfotonew2.jpg" alt="Hero Image" class="hero-image" id="heroImage">
+      </div>
+
+      <!-- <div class="hero-overlay">
+            <h1 class="hero-title">НОВЫЕ ТЕХНОЛОГИИ</h1>
+            <p class="hero-subtitle">Watch the image transform as you scroll</p>
+            <div class="scroll-indicator">
+                 <div class="mouse"><div class="wheel"></div></div> 
+            </div>
+        </div> -->
+
+      <section class="order-form-section">
+        <div class="container">
+          <div class="order-form-container">
+            <div class="form-header">
+              <div class="logo-form">
+                <img src="./logo.svg" alt="Логотип компании" class="logo-img-form">
+              </div>
+              <!-- <h2 class="form-title">Заказать звонок</h2> -->
+            </div>
+
+            <form class="call-order-form" id="callOrderForm">
+              <div class="form-group">
+                <label for="clientName" class="form-label">Ваше имя</label>
+                <input type="text" id="clientName" name="clientName" class="form-input" placeholder="Введите ваше имя"
+                  required>
+              </div>
+
+              <div class="form-group">
+                <label for="clientPhone" class="form-label">Номер телефона</label>
+                <input type="tel" id="clientPhone" name="clientPhone" class="form-input"
+                  placeholder="+7 (___) ___-__-__" required>
+              </div>
+
+              <div class="form-group">
+                <label for="serviceType" class="form-label">Выберите услугу</label>
+                <select id="serviceType" name="serviceType" class="form-select" required>
+                  <option value="">-- Выберите услугу --</option>
+                  <option value="welding">Сварочные работы</option>
+                  <option value="radiator">Ремонт радиаторов</option>
+                  <option value="diagnostics">Заправка кондиционеров</option>
+                </select>
+              </div>
+
+              <button type="submit" class="form-submit-btn">Отправить заявку</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="section-gallery">
+      <h2>ЛЮБЫЕ ВИДЫ СВАРОЧНЫХ РАБОТ</h2>
+      <div class="project-gallery">
+        <div class="project-card">
+          <p class="project-name">Поддон картера</p>
+          <div class="project-image-container">
+            <img src="./images/poddon.jpeg" alt="Сварка поддона картера" class="project-image">
+          </div>
+        </div>
+        <div class="project-card">
+          <p class="project-name">Корпус КПП</p>
+          <div class="project-image-container">
+            <img src="./images/kpp.jpeg" alt="Сварка корпуса КПП" class="project-image">
+          </div>
+        </div>
+        <div class="project-card">
+          <p class="project-name">Блок двигателя</p>
+          <div class="project-image-container">
+            <img src="./images/korpdv.jpeg" alt="Сварка блока двигателя" class="project-image">
+          </div>
+        </div>
+        <div class="project-card">
+          <p class="project-name">Коллектор</p>
+          <div class="project-image-container">
+            <img src="./images/kollector-menu.jpeg" alt="Сварка коллектора" class="project-image">
+          </div>
+        </div>
+        <div class="project-card">
+          <p class="project-name">Легкосплавные диски</p>
+          <div class="project-image-container">
+            <img src="./images/diski2.jpeg" alt="Сварка легкосплавных дисков" class="project-image">
+          </div>
+        </div>
+        <div class="project-card">
+          <p class="project-name">Трубки кондиционера</p>
+          <div class="project-image-container">
+            <img src="./images/truba.png" alt="Сварка трубок кондиционера" class="project-image">
+          </div>
+        </div>
+        <div class="project-card">
+          <p class="project-name">Топливный бак</p>
+          <div class="project-image-container">
+            <img src="./images/bak-menu.jpg" alt="Сварка топливного бака" class="project-image">
+          </div>
+        </div>
+        <div class="project-card">
+          <p class="project-name">Радиатор автокондиционера</p>
+          <div class="project-image-container">
+            <img src="./images/radiator-menu.jpg" alt="Сварка радиатора автокондиционера" class="project-image">
+          </div>
+        </div>
+        <!-- <div class="project-card">
+      <p class="project-name">Рама велосипеда/мотоцикла</p>
+      <div class="project-image-container">
+        <img src="./images/рама.jpg" alt="Сварка рамы" class="project-image">
+      </div>
+    </div> -->
+      </div>
+    </section>
+    <!-- После section-gallery -->
+    <section class="order-form-section-mobile" style="display: none;">
+      <div class="container">
+        <div class="order-form-container">
+          <!-- Та же форма, что и раньше -->
+        </div>
+      </div>
+    </section>
+    <section class="hero-main">
+      <div class="hero-section2">
+        <div class="hero-inner">
+          <div class="hero-text">
+            <h1 class="hero-title">Новейший подход к ремонту радиаторов</h1>
+            <p class="hero-description">
+              Мы используем передовые методы восстановления теплообменников, которые позволяют вернуть радиаторам до
+              100% эффективности.
+            </p>
+            <button class="hero-cta">Позвонить</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Блок hero-tagmain идет сразу после hero-main -->
+      <div class="hero-tagmain hero-main">
+        <div class="container">
+          <div class="repair-methods-section">
+            <div class="methods-grid">
+              <!-- Метод 1: Диагностика -->
+              <div class="method-card">
+                <div class="method-image-container">
+                  <img src="./images/rad0.jpg" alt="Диагностика тепловизором" class="method-image">
+                </div>
+                <div class="method-content">
+                  <h3 class="method-title">Диагностика тепловизором</h3>
+                  <p class="method-description">Точное определение зон утечки тепла и повреждений без разбора.</p>
+                </div>
+              </div>
+
+              <!-- Метод 2: Подготовка -->
+              <div class="method-card">
+                <div class="method-image-container">
+                  <img src="./images/rad1.jpg" alt="Подготовка радиатора" class="method-image">
+                </div>
+                <div class="method-content">
+                  <h3 class="method-title">Профессиональная подготовка</h3>
+                  <p class="method-description">Очистка, демонтаж секций, подготовка краев под сварку.</p>
+                </div>
+              </div>
+
+              <!-- Метод 3: Запайка аргоном -->
+              <div class="method-card">
+                <div class="method-image-container">
+                  <img src="./images/rad2.jpg" alt="Запайка аргоном" class="method-image">
+                </div>
+                <div class="method-content">
+                  <h3 class="method-title">Запайка аргоном</h3>
+                  <p class="method-description">Восстановление швов инертным газом для максимальной прочности.</p>
+                </div>
+              </div>
+
+              <!-- Метод 4: Монтаж -->
+              <div class="method-card">
+                <div class="method-image-container">
+                  <img src="./images/rad3.jpg" alt="Монтаж в автомобиль" class="method-image">
+                </div>
+                <div class="method-content">
+                  <h3 class="method-title">Монтаж в автомобиль</h3>
+                  <p class="method-description">Установка, опрессовка и проверка герметичности в вашем авто.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-us">
+      <h2 class="section-title">Почему мы?</h2>
+      <div class="why-us-grid">
+        <div class="card">
+          <img src="./images/why1.svg" alt="Запайка аргоном" class="why-image">
+          <div class="card-content">
+            <h3 class="card-title">Профессиональное оборудование</h3>
+            <p class="card-desc">Работаем на современных станках и инструментах, что гарантирует точность и качество
+              каждого шва.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon icon-certified"></div>
+          <div class="card-content">
+            <h3 class="card-title">Быстрый выезд и выполнение работ</h3>
+            <p class="card-desc">Бригада приезжает в день обращения, ремонт выполняется без задержек и проволочек.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon icon-equipment"></div>
+          <div class="card-content">
+            <h3 class="card-title">Работаем по договору с гарантией</h3>
+            <p class="card-desc">Официальное сотрудничество, документальное оформление и гарантия на все виды
+              ремонтных
+              работ.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon icon-customer"></div>
+          <div class="card-content">
+            <h3 class="card-title">Опыт и квалификация специалистов</h3>
+            <p class="card-desc">Наши сварщики имеют профильное образование и более 10 лет практического опыта работы.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Мобильная форма (будет показана после "Почему мы") -->
+    <section class="order-form-section-mobile">
+      <div class="container">
+        <div class="order-form-container">
+          <div class="form-header">
+            <div class="logo-form">
+              <img src="./logo.svg" alt="Логотип компании" class="logo-img-form">
+            </div>
+            <h2 class="form-title">Заказать звонок</h2>
+          </div>
+
+          <form class="call-order-form" id="callOrderFormMobile">
+            <div class="form-group">
+              <label for="clientNameMobile" class="form-label">Ваше имя</label>
+              <input type="text" id="clientNameMobile" name="clientName" class="form-input"
+                placeholder="Введите ваше имя" required>
+            </div>
+
+            <div class="form-group">
+              <label for="clientPhoneMobile" class="form-label">Номер телефона</label>
+              <input type="tel" id="clientPhoneMobile" name="clientPhone" class="form-input"
+                placeholder="+7 (___) ___-__-__" required>
+            </div>
+
+            <div class="form-group">
+              <label for="serviceTypeMobile" class="form-label">Выберите услугу</label>
+              <select id="serviceTypeMobile" name="serviceType" class="form-select" required>
+                <option value="">-- Выберите услугу --</option>
+                <option value="welding">Сварочные работы</option>
+                <option value="radiator">Ремонт радиаторов</option>
+                <option value="diagnostics">Заправка кондиционеров</option>
+              </select>
+            </div>
+
+            <button type="submit" class="form-submit-btn">Отправить заявку</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="reviews-section" id="reviews">
+      <div class="container">
+        <h2 class="section-title">Отзывы клиентов</h2>
+        <div class="reviews-carousel">
+          <div class="reviews-wrapper" id="reviewsContainer">
+            <!-- Отзывы будут загружены сюда -->
+            <div class="review-card">
+              <div class="review-header">
+                <div class="review-avatar">З</div>
+                <div class="review-info">
+                  <div class="review-name">Загрузка отзывов...</div>
+                  <div class="review-date">Пожалуйста, подождите</div>
+                </div>
+              </div>
+              <div class="review-text">
+                Получаем последние отзывы...
+              </div>
+            </div>
+          </div>
+          <div class="reviews-navigation">
+            <button class="reviews-prev" id="prevReview" disabled>←</button>
+            <button class="reviews-next" id="nextReview" disabled>→</button>
+          </div>
+        </div>
+        <!-- <div class="all-reviews-link">
+      <a href="https://yandex.ru/maps/org/novyye_tekhnologii/177462280069/?ll=40.568987%2C64.531400&z=17.51" 
+         target="_blank" 
+         class="show-all-reviews">
+        Смотреть все отзывы на Яндекс.Картах
+      </a>
+    </div> -->
+      </div>
+    </section>
+
+    <!-- Секция FAQ -->
+    <section class="faq-content" aria-labelledby="faq-title">
+      <!-- Внутренний контейнер с максимальной шириной -->
+      <div class="faq-content-inner">
+        <!-- Заголовок -->
+        <h2 id="faq-title" class="faq-title">Часто задаваемые вопросы</h2>
+
+        <!-- Список вопросов -->
+        <div class="faq-list">
+          <!-- Вопрос 1 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              Сколько стоит сварка поддона картера в Архангельске?
+              <!-- Галочка (вместо SVG) -->
+              <span class="faq-arrow"></span>
+            </summary>
+            <p class="faq-answer">Стоимость зависит от сложности трещины, материала и необходимости дополнительной
+              обработки. В среднем — от 2500 до 6000 рублей. Точную цену называем после бесплатной диагностики.</p>
+          </details>
+
+          <!-- Вопрос 2 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              Какие сроки выполнения ремонта?
+              <span class="faq-arrow"></span>
+            </summary>
+            <p class="faq-answer">Большинство работ занимает 1–2 дня. Если требуется полировка, расточка или
+              восстановление геометрии — до 3 дней. Возможен срочный заказ — уточняйте при обращении.</p>
+          </details>
+
+          <!-- Вопрос 3 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              Даёте ли вы гарантию на сварные швы?
+              <span class="faq-arrow"></span>
+            </summary>
+            <p class="faq-answer">Да, мы предоставляем гарантию от 3 до 12 месяцев в зависимости от типа работы. Мы
+              уверены в качестве своих услуг и используем проверенные технологии аргонной сварки.</p>
+          </details>
+
+          <!-- Вопрос 4 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              Нужно ли демонтировать деталь перед сваркой?
+              <span class="faq-arrow"></span>
+            </summary>
+            <p class="faq-answer">В большинстве случаев да — чтобы обеспечить качественный доступ к месту повреждения
+              и избежать тепловых деформаций других частей авто. Поможем с демонтажом или примем уже снятую деталь.
+            </p>
+          </details>
+        </div>
+
+        <!-- Контактная информация -->
+        <p class="faq-contact">Остались вопросы? Позвоните нам!</p>
+      </div>
+    </section>
+    <section class="map-section" id="contact">
+      <div class="map-section-inner">
+        <!-- Контейнер для адреса -->
+        <div class="address-container">
+          <h2 class="map-section-title">Наши контакты</h2>
+          <div class="contact-info">
+            <div class="contact-item">
+              <h3 class="contact-label">Телефон</h3>
+              <a href="tel:+78182440929" class="contact-value phone-link">44-09-29</a>
+              <a href="https://wa.me/79115540929" class="contact-value whatsapp-link" target="_blank">WhatsApp: 8
+                (911) 554-09-29</a>
+            </div>
+            <div class="contact-item">
+              <h3 class="contact-label">Email</h3>
+              <a href="mailto:newtecnology29@yandex.ru" class="contact-value email-link">newtecnology29@yandex.ru</a>
+            </div>
+            <div class="contact-item">
+              <h3 class="contact-label">Адрес</h3>
+              <address class="contact-value address-text">
+                г. Архангельск,<br>
+                ул. Смольный буян, 20 к.4<br>
+                (таксопарк)
+              </address>
+            </div>
+            <div class="contact-item">
+              <h3 class="contact-label">Реквизиты</h3>
+              <p class="contact-value requisites-text">ИНН 2901302699<br>ОГРН 1202900005197</p>
+            </div>
+          </div>
+          <!-- <div class="contact-cta">
+        <button class="hero-cta contact-cta-button">Позвонить</button>
+      </div> -->
+        </div>
+
+        <!-- Контейнер для карты -->
+        <div class="map-container">
+          <div id="map-container" style="width: 100%; height: 100%; border-radius: 8px; overflow: hidden;">
+            <script type="text/javascript" charset="utf-8" async
+              src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A3c05715622e60bc9c9f46f22382fe272347bf9aaddb92910aac174809810d800&width=100%25&height=450&lang=ru_RU&scroll=true">
+              </script>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div> <!-- .scroll-container -->
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

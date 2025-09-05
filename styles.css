@@ -1,0 +1,2046 @@
+@import url('./footer.css');
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('./fonts/SpaceGrotesk-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p {
+  font-size: 16px;
+  color: #9daab8;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+  background: white;
+}
+
+h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 48px;
+}
+
+h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 32px;
+  color: white;
+}
+@media (max-width: 480px) {
+  h2 {
+    font-size: 24px;
+  }
+}
+
+h3 {
+  font-weight: 500;
+  line-height: 1.2;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  /* color: white; */
+}
+
+h6 {
+  font-size: 16px;
+  color: #9daab8;
+}
+
+/* .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  margin-bottom: 40px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f9f9f9;
+} */
+
+/* Основной хедер */
+.header {
+  /*background-color: #111418;*/
+  color: white;
+  z-index: 1000;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); */
+  position: relative; /* Для десктопа */
+  top: 0;
+}
+@media (max-width: 768px) {
+  .header {
+    position: relative;
+    top: 0;
+  }
+}
+
+/* Мобильная верхняя часть - изначально скрыта */
+.mobile-header-top {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px; /* Отступы как в мобильной версии */
+  width: 100%;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .mobile-header-top {
+    display: flex;
+  }
+}
+@media (max-width: 480px) {
+  .mobile-header-top {
+    padding: 12px 15px;
+  }
+}
+
+.mobile-logo {
+  height: 30px; /* Размер логотипа для мобильной версии */
+  width: auto;
+}
+@media (max-width: 480px) {
+  .mobile-logo {
+    height: 25px;
+  }
+}
+
+/* Основной контейнер хедера */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  padding: 15px 40px; /* Отступы для десктопа */
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column; /* Располагаем элементы вертикально */
+    align-items: start; /* Центрируем содержимое */
+    padding: 15px 20px 30px 20px; /* Уменьшаем боковые отступы, увеличиваем нижний */
+    /* gap: 20px; Отступ между элементами */
+  }
+}
+@media (max-width: 480px) {
+  .header-container {
+    padding: 12px 15px 25px 15px;
+  }
+}
+
+/* Левая часть - надписи */
+.header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Стили надписей для десктопа */
+.header-brand {
+  font-size: 200px;
+  font-weight: bold;
+  line-height: 1;
+  color: white;
+  text-transform: uppercase;
+}
+@media (max-width: 1280px) {
+  .header-brand {
+    font-size: 90px;
+  }
+}
+@media (max-width: 768px) {
+  .header-brand {
+    font-size: 90px; /* Уменьшаем размер шрифта */
+    margin-top: 0; /* Убираем отрицательный отступ */
+  }
+}
+@media (max-width: 480px) {
+  .header-brand {
+    font-size: 70px; /* Еще меньше на очень маленьких экранах */
+  }
+}
+
+.header-subtitle {
+  font-size: 70px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  margin-top: -20px;
+  margin-left: 0px; /* Сдвиг вправо */
+}
+@media (max-width: 768px) {
+  .header-subtitle {
+    font-size: 48px; /* Уменьшаем размер шрифта */
+    margin-top: 5px; /* Нормальный отступ сверху */
+  }
+}
+@media (max-width: 480px) {
+  .header-subtitle {
+    font-size: 30px; /* Еще меньше на очень маленьких экранах */
+  }
+}
+
+/* Правая часть - телефон и меню */
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 15px;
+}
+@media (max-width: 768px) {
+  .header-right {
+    display: none;
+  }
+}
+
+.header-phone {
+  color: #1978e5;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  padding: 12px;
+  background-color: #111418;
+  border-radius: 8px;
+  border: 1px solid #1978e5;
+}
+.header-phone:hover {
+  color: #1565c0;
+  
+}
+
+/* Десктоп меню */
+.nav-desktop {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.nav-desktop a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem; /* Размер шрифта как в исходном коде */
+  transition: color 0.3s ease;
+}
+@media (max-width: 1280px) {
+  .nav-desktop a {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .nav-desktop a {
+    font-size: 1rem;
+  }
+}
+.nav-desktop a:hover {
+  color: #1978e5;
+}
+
+/* Активный пункт меню */
+.nav-desktop a.active,
+.nav-mobile a.active {
+  color: #1978e5;
+  font-weight: bold;
+}
+
+/* Мобильное меню - иконка (изначально скрыта) */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+  background: none;
+  border: none;
+  padding: 5px;
+}
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+}
+@media (max-width: 480px) {
+  .mobile-menu-toggle {
+    padding: 3px;
+  }
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: 0.3s;
+}
+@media (max-width: 480px) {
+  .mobile-menu-toggle span {
+    width: 20px;
+    height: 2px;
+  }
+}
+
+/* Мобильное меню - выпадающее */
+.nav-mobile {
+  display: none;
+  flex-direction: column;
+  background-color: #1c2126;
+  padding: 20px;
+  gap: 15px;
+  border-top: 1px solid #3c4753;
+}
+@media (max-width: 768px) {
+  .nav-mobile {
+    display: none;
+  }
+  .nav-mobile.active {
+    display: flex;
+  }
+}
+
+.nav-mobile a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 10px 0;
+  border-bottom: 1px solid #3c4753;
+}
+.nav-mobile a:last-child {
+  border-bottom: none;
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Контейнер изображения теперь будет масштабироваться */
+.hero-image-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+  /* will-change советует MDN использовать только при активной анимации */
+  /* will-change: transform; */
+  /* transform-origin по центру для равномерного масштабирования */
+  transform-origin: center center;
+  /* transition для плавного изменения размеров контейнера (опционально) */
+  /* transition: width 0.2s ease, height 0.2s ease, transform 0.2s ease; */
+}
+
+/* Изображение всегда заполняет контейнер */
+.hero-image {
+  width: 100%;
+  height: 100%;
+  /* Изображение растягивается/обрезается, чтобы заполнить контейнер */
+  object-fit: cover;
+  display: block;
+  /* will-change убираем с изображения */
+  /* will-change: transform; */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 60px 40px;
+  color: white;
+  text-align: left;
+  z-index: 10;
+  box-sizing: border-box;
+}
+/* Планшеты и маленькие экраны */
+@media (max-width: 1024px) {
+  .hero-overlay {
+    padding: 40px 30px;
+  }
+}
+/* Мобильные устройства */
+@media (max-width: 768px) {
+  .hero-overlay {
+    padding: 30px 20px;
+    /* Центрируем текст на мобильных */
+    text-align: center;
+  }
+}
+/* Очень маленькие экраны (до 480px) */
+@media (max-width: 480px) {
+  .hero-overlay {
+    padding: 20px 15px;
+  }
+}
+
+.hero-title,
+.hero-subtitle {
+  transition: opacity 0.3s ease;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mouse {
+  width: 25px;
+  height: 45px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  position: relative;
+}
+
+.wheel {
+  width: 3px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll-wheel 2s infinite;
+}
+
+@keyframes scroll-wheel {
+  0% {
+    opacity: 1;
+    top: 8px;
+  }
+
+  50% {
+    opacity: 0.5;
+    top: 15px;
+  }
+
+  100% {
+    opacity: 1;
+    top: 8px;
+  }
+}
+
+/* Форма заказа звонка */
+.order-form-container {
+  max-width: 500px;
+  width: 300px;
+  margin: 0 80px;
+  position: relative;
+  /* left: 50px; */
+  top: -180px;
+  background: #1c2126;
+  border-radius: 8px;
+  padding: 2rem;
+  border: 1px solid #3c4753;
+  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); */
+  z-index: 15;
+}
+@media (max-width: 1024px) {
+  .order-form-container {
+    left: 20px; /* Меньший сдвиг на планшетах */
+  }
+}
+@media (max-width: 768px) {
+  .order-form-container {
+    left: 0;
+    margin: 0 auto;
+    padding: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .order-form-container {
+    padding: 5rem 1rem;
+  }
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.logo-form {
+  margin-bottom: 1rem;
+}
+
+.logo-img-form {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.form-title {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .form-title {
+    font-size: 1.2rem;
+  }
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  color: #e0e0e0;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 0.4rem 1rem;
+  border: 1px solid #3c4753;
+  border-radius: 4px;
+  background: #293038;
+  color: white;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+.form-input:focus,
+.form-select:focus {
+  outline: none;
+  border-color: #1978e5;
+}
+.form-input::placeholder {
+  color: #9daab8;
+}
+
+.form-submit-btn {
+  width: 100%;
+  background: #1978e5;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.form-submit-btn:hover {
+  background: #1565c0;
+  transform: translateY(-2px);
+}
+.form-submit-btn:active {
+  transform: translateY(0);
+}
+@media (max-width: 768px) {
+  .form-submit-btn {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Адаптация */
+/* Скрываем форму в мобильной версии */
+.order-form-section {
+  display: block;
+}
+@media (max-width: 768px) {
+  .order-form-section {
+    display: none;
+  }
+}
+
+/* Показываем форму только в мобильной версии */
+.order-form-section-mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  .order-form-section-mobile {
+    display: block;
+    /* padding: 2rem 1rem; */
+    background-color: #111418;
+  }
+}
+@media (max-width: 768px) {
+  .order-form-section-mobile .order-form-container {
+    max-width: 100%;
+    margin: 0;
+    position: relative;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    border-radius: 0;
+    border: 0;
+    background-color: #111418;
+  
+  }
+}
+
+/* Text Content Section */
+.text-content-section {
+  position: relative;
+  z-index: 5;
+  background: #111418;
+  /* margin-top: 50vh; */
+  padding: 40px 0; /* Уменьшено padding */
+  will-change: transform;
+}
+@media (max-width: 768px) {
+  .text-content-section {
+    margin-top: 30vh; /* Еще меньше на мобильных */
+    padding: 30px 0;
+  }
+}
+@media (max-width: 480px) {
+  .text-content-section {
+    margin-top: 20vh; /* Минимальный отступ на маленьких экранах */
+    padding: 20px 0;
+  }
+}
+
+.text-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+@media (max-width: 1024px) {
+  .text-content {
+    padding: 0 30px;
+  }
+}
+@media (max-width: 768px) {
+  .text-content {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 375px) {
+  .text-content {
+    padding: 0 15px;
+  }
+}
+
+.text-content h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: white;
+}
+@media (max-width: 1024px) {
+  .text-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .text-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+}
+@media (max-width: 375px) {
+  .text-content h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+}
+@media (max-width: 320px) {
+  .text-content h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.content-blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+@media (max-width: 1024px) {
+  .content-blocks {
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .content-blocks {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+}
+@media (max-width: 375px) {
+  .content-blocks {
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+}
+
+.content-block {
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+@media (max-width: 1024px) {
+  .content-block {
+    padding: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .content-block {
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+}
+@media (max-width: 375px) {
+  .content-block {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+}
+@media (max-width: 320px) {
+  .content-block {
+    padding: 0.75rem;
+  }
+}
+.content-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.content-block h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 375px) {
+  .content-block h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+}
+@media (max-width: 320px) {
+  .content-block h3 {
+    font-size: 1rem;
+  }
+}
+
+.content-block p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+@media (max-width: 375px) {
+  .content-block p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+@media (max-width: 320px) {
+  .content-block p {
+    font-size: 0.85rem;
+  }
+}
+
+.projects-intro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.projects-title {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+}
+
+.projects-description {
+  color: #9daab8;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* --- Секция галереи --- */
+.section-gallery {
+  width: 100%;
+  background-color: #111418;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  box-sizing: border-box;
+  margin-top: -350px;
+  display: flex;
+  flex-direction: column;
+}
+/* Адаптация для мобильных */
+@media (max-width: 480px) {
+  .section-gallery {
+    padding: 40px 15px;
+    align-items: center;
+  }
+}
+
+/* Заголовок галереи */
+.section-gallery h2 {
+  color: white;
+  margin: 0 0 30px 0;
+  font-size: 2rem;
+  font-weight: bold;
+  align-items: center;
+}
+/* Адаптация заголовка для мобильных */
+@media (max-width: 480px) {
+  .section-gallery h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    max-width: 300px;
+  }
+}
+
+/* Сетка галереи */
+.project-gallery {
+  max-width: 1200px; /* Ограничение ширины сетки */
+  margin: 0 auto; /* Центрирование сетки */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 колонки по умолчанию */
+  gap: 0.75rem; /* Отступы между карточками */
+  box-sizing: border-box;
+}
+/* Адаптация сетки для планшетов */
+@media (max-width: 1024px) {
+  .project-gallery {
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+  }
+}
+/* Адаптация сетки для мобильных */
+@media (max-width: 768px) {
+  .project-gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+  }
+}
+/* Адаптация сетки для очень маленьких экранов */
+@media (max-width: 480px) {
+  .project-gallery {
+    grid-template-columns: 1fr; /* 1 колонка */
+    gap: 1rem; /* Увеличенные отступы */
+  }
+}
+
+/* Карточка проекта */
+.project-card {
+  background-color: #2a2a2a; /* Фон всей карточки */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Распределяет пространство между текстом и изображением */
+  border-radius: 0.5rem;
+  aspect-ratio: 1 / 1; /* Квадратные карточки */
+  color: white;
+  position: relative;
+  overflow: hidden; /* Скрывает содержимое, выходящее за границы borderRadius */
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 1px solid #3c4753; /* Граница карточки */
+}
+
+/* Текстовый контент карточки */
+.project-name {
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.2;
+  padding: 1rem; /* Отступы внутри текстовой части */
+  margin: 0;
+  text-align: center;
+  box-sizing: border-box;
+  z-index: 2; /* Поверх затемнения */
+}
+/* Адаптация текста для мобильных */
+@media (max-width: 768px) {
+  .project-name {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .project-name {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
+/* Контейнер для изображения внутри карточки */
+.project-image-container {
+  flex-grow: 1; /* Занимает всё доступное пространство внутри .project-card */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px 10px 10px; /* Отступы по краям контейнера с изображением */
+  border-radius: 0.3rem; /* Скругление углов контейнера */
+  overflow: hidden; /* Обрезает изображение по границам контейнера */
+  box-sizing: border-box;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); /* Лёгкая тень вокруг изображения */
+  position: relative; /* Для правильного позиционирования ::before */
+}
+/* Адаптация контейнера для мобильных */
+@media (max-width: 768px) {
+  .project-image-container {
+    margin: 0 8px 8px 8px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  }
+}
+@media (max-width: 480px) {
+  .project-image-container {
+    margin: 0 6px 6px 6px;
+  }
+}
+
+/* Изображение */
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Изображение заполняет контейнер, сохраняя пропорции и обрезая края при необходимости */
+  display: block;
+  transition: opacity 0.3s ease; /* Плавный переход для эффекта при наведении */
+}
+
+/* --- Эффекты при наведении --- */
+
+/* Слой для затемнения всей карточки при наведении */
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0); /* Изначально прозрачный */
+  transition: background 0.3s ease; /* Плавный переход */
+  pointer-events: none; /* Не перехватывает события мыши */
+  z-index: 1; /* Под текстом, над изображением */
+}
+
+/* При наведении - затемнение */
+.project-card:hover::before {
+  background: rgba(0, 0, 0, 0.4); /* Полупрозрачный черный слой */
+}
+
+/* При наведении - немного затемняем изображение */
+.project-card:hover .project-image {
+  opacity: 0.8;
+}
+
+/* Удалено пустое свойство .project-image1 { background-image: ; } */
+
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-image-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+  /* transition: opacity 0.5s ease; */ /* Можно убрать, если не используется */
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ключевое свойство для правильного масштабирования */
+  transform-origin: center center;
+  will-change: transform; /* Оставляем для параллакса */
+  /* Убираем transition, так как анимация управляется JS */
+}
+.hero-main {
+  background-color: #111418;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-section2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url(https://lh3.googleusercontent.com/aida-public/AB6AXuDHmf5iHiRldjAVwU_ILhMDIcvQ1QHps5yJBwfoJrVRFXbXR1e6izW96fI4Q6PgFmSqa5lrpcYJU3ntoKa_pCFK714-xqJQVDP557v1yxDURHdr7K16rM0OLYuIOvbcpqK-7YzMXvehmKIZqpJGZ99Niuhlvh1ZOH2uUJbsD5vkCtTqm_lt0XE7PhAe_-pqQwM4K5IShyII324UwrfO4qIxTt5PPvIarI3tgLmZuXP8ag5IV2gfrs0jbEisZV6R6Zw_pZkSdtZRtalF    );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 1200px;
+  border-radius: 8px;
+  background-color: #111418;
+  width: 100%;
+  height: 512px;
+  position: relative;
+  z-index: 5;
+}
+
+.hero-inner {
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-title {
+  color: white;
+  font-weight: 600;
+  line-height: 1.2;
+  font-size: 48px;
+}
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 32px;
+  }
+}
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 32px;
+  }
+}
+
+.hero-description {
+  color: white;
+  text-align: center;
+  /* margin-top: 30px; */
+}
+
+.hero-cta {
+  background-color: #1978e5;
+  color: white;
+  font-weight: bold;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  width: fit-content;
+  margin-top: 1rem;
+}
+
+.hero-tag {
+  display: flex;
+  padding: 8px;
+  border-radius: 8px;
+  align-items: center;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.hero-tagtext {
+  color: black;
+  margin: 0;
+  text-align: left;
+  margin-left: 16px;
+}
+
+.hero-tagmain {
+  display: flex;
+  flex-direction: column;
+  /* padding: 16px; */
+}
+
+/* --- Секция методов ремонта (hero-tagmain) --- */
+
+.hero-tagmain.hero-main {
+  /* Фон такой же, как у hero-main, без разделительных границ */
+  background-color: #111418;
+  /* padding: 2rem 2rem 3rem 2rem; */
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Контейнер секции методов */
+.repair-methods-section {
+  max-width: 1200px; /* Максимальная ширина */
+  margin: 0 auto;
+}
+
+/* Сетка методов */
+.methods-grid {
+  display: grid;
+  /* По умолчанию 4 карточки в ряд */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem; /* Отступы между карточками */
+  background-color: black;
+  padding: 24px;
+}
+
+/* Карточка метода */
+.method-card {
+  /* background-color: #1c2126;
+  border: 1px solid #3c4753; */
+  border-radius: 0.5rem;
+  overflow: hidden; /* Скрывает содержимое, выходящее за границы borderRadius */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Карточки одной высоты */
+}
+
+/* Эффект при наведении на карточку */
+.method-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Контейнер изображения метода */
+.method-image-container {
+  width: 100%;
+  /* height: 150px; Фиксированная высота изображения (по желанию) */
+  aspect-ratio: 16 / 9; /* Соотношение сторон изображения */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Изображение метода */
+.method-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Изображение заполняет контейнер, обрезая края */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Увеличение изображения при наведении на карточку */
+.method-card:hover .method-image {
+  transform: scale(1.05);
+}
+
+/* Контент метода */
+.method-content {
+  padding: 1rem;
+  flex-grow: 1; /* Занимает оставшееся пространство */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Заголовок метода */
+.method-title {
+  color: white;
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Описание метода */
+.method-description {
+  color: #9daab8;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  flex-grow: 1; /* Текст занимает доступное пространство */
+  text-align: center;
+}
+
+/* --- Адаптация для планшетов --- */
+@media (max-width: 1024px) {
+  .methods-grid {
+    gap: 1rem;
+  }
+
+  .method-content {
+    padding: 0.8rem;
+  }
+
+  .method-title {
+    font-size: 1rem;
+  }
+}
+
+/* --- Адаптация для мобильных устройств --- */
+@media (max-width: 768px) {
+  /* 2 карточки в ряд на мобильных */
+  .methods-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .method-image-container {
+    aspect-ratio: 3 / 2; /* Изменение соотношения сторон для мобильных */
+  }
+}
+
+/* --- Адаптация для очень маленьких экранов --- */
+@media (max-width: 480px) {
+
+  /* 1 карточка в ряд на очень маленьких экранах */
+  .methods-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .method-content {
+    padding: 0.7rem;
+  }
+
+  .method-title {
+    font-size: 1rem;
+  }
+}
+
+/* Why Us Section */
+.why-us {
+  padding: 6rem 3rem;
+  position: relative;
+  z-index: 5;
+  background-color: #111418;
+}
+@media (max-width: 1024px) {
+  .why-us {
+    padding: 5rem 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .why-us {
+    padding: 3rem 1.5rem;
+  }
+}
+@media (max-width: 375px) {
+  .why-us {
+    padding: 3rem 1rem;
+  }
+}
+
+.section-title {
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .section-title {
+    text-align: center;
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 375px) {
+  .section-title {
+    /* font-size: 1.1rem; */
+    margin-bottom: 0.75rem;
+    text-align: center;
+  }
+}
+
+.why-us-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+@media (max-width: 1024px) {
+  .why-us-grid {
+    gap: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .why-us-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: #1c2126;
+  border: 1px solid #3c4753;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: 280px;
+}
+@media (max-width: 1024px) {
+  .card {
+    width: calc(50% - 0.5rem);
+    min-width: 250px;
+  }
+}
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+@media (max-width: 375px) {
+  .card {
+    padding: 0.75rem;
+    gap: 0.75rem;
+  }
+}
+
+.card-icon {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+@media (max-width: 375px) {
+  .card-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.card-title {
+  color: white;
+}
+@media (max-width: 375px) {
+  .card-title {
+    font-size: 1rem;
+  }
+}
+
+.card-desc {
+  color: #9daab8;
+  margin-top: 12px;
+}
+@media (max-width: 375px) {
+  .card-desc {
+    font-size: 16px;
+    margin-top: 12px;
+  }
+}
+.why-image {
+  width: 40px;
+  height: 40px;
+}
+.icon-experience {
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icon-certified {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20fill='currentColor'%20viewBox='0%200%20256%20256'%3E%3Cpath%20d='M248%20128a56%2056%200%201%200-96%2039.14V224a8%208%200%200%200%2011.58%207.16L192%20216.94l28.42%2014.22a8%208%200%200%200%2023.58-16.82V167.14A55.81%2055.81%200%200%200%20248%20128ZM192%2088a40%2040%200%201%201-40%2040%2040%2040%200%200%201%2040%20-40Zm3.58%20112.84a8%208%200%200%200-7.16%200L168%20211.06V178.59a55.94%2055.94%200%200%200%2048%200v32.47ZM136%20192a8%208%200%200%201-8%208H40a16%2016%200%200%201-16-16V56a16%2016%200%200%201%2016-16h136a16%2016%200%200%201%2016%2016%208%208%200%200%200-16%200H40V184h88a8%208%200%200%201%208%208Zm-16-56a8%208%200%200%201-8%208H72a8%208%200%200%201%200-16h40a8%208%200%200%201%208%208Zm0-32a8%208%200%200%201-8%208H72a8%208%200%200%201%200-16h40a8%208%200%200%201%208%208Z'%20/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icon-equipment {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20fill='currentColor'%20viewBox='0%200%20256%20256'%3E%3Cpath%20d='M226.76%2069a8%208%200%200%200-12.84-2.88l-40.3%2037.19-17.23-3.7-3.7-17.23%2037.19-40.3a8%208%200%200%200-12.84-2.88%2072%2072%200%200%200-80%20104%2072.34%2072.34%200%200%200%205.94%2028.94L33.79%20177c-.15.12-.29.26-.43.39a32%2032%200%200%200%2045.26%2045.26c.13-.13.27-.28.39-.42L131.06%20162a72%2072%200%200%200%2096-64%2071.56%2071.56%200%200%200-5.24-27.26ZM160%20152a56.14%2056.14%200%200%201-27.07-7%208%208%200%200%201-9.92%201.77L67.11%20211.51a16%2016%200%200%201-22.62-22.62L109.18%20133a8%208%200%200%201%201.77-9.93%2056%2056%200%200%201%2058.36-82.31l-31.2%2033.81a8%208%200%200%201-1.94%207.1L141.83%20108a8%208%200%200%201%206.14%206.14l26.35%205.66a8%208%200%200%201%207.1-1.94l33.81-31.2A56.06%2056.06%200%200%201%20160%20152Z'%20/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icon-customer {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20fill='currentColor'%20viewBox='0%200%20256%20256'%3E%3Cpath%20d='M117.25%20157.92a60%2060%200%201%200-66.5%200%2095.83%2095.83%200%200%200-132.22%2037.71%208%208%200%200%200%2013.4%208.74%2080%2080%200%200%201%20134.14%200%208%208%200%200%200%2013.4-8.74%2095.83%2095.83%200%200%200-47.22-37.71ZM40%20108a44%2044%200%201%201%2044%2044%2044.05%2044.05%200%200%200-44-44Zm210.14%2098.7a8%208%200%200%201-11.07-2.33%2079.83%2079.83%200%200%201-27.22-10.08%208%208%200%200%201%200-16%2044%2044%200%200%201-16.34-84.87%208%208%200%200");
+}
+
+/* --- Секция отзывов --- */
+
+.reviews-section {
+  padding: 4rem 2rem;
+  background-color: #111418;
+  position: relative;
+  z-index: 5;
+  box-sizing: border-box;
+}
+@media (max-width: 1024px) {
+  .reviews-section {
+    padding: 3rem 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .reviews-section {
+    padding: 3rem 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .reviews-section {
+    padding: 2rem 1rem;
+  }
+}
+
+.reviews-section .section-title {
+  text-align: center;
+  color: white;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+@media (max-width: 1024px) {
+  .reviews-section .section-title {
+    font-size: 1.75rem;
+  }
+}
+@media (max-width: 768px) {
+  .reviews-section .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .reviews-section .section-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Карусель отзывов */
+
+.reviews-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+/* Адаптация для .reviews-carousel не требуется */
+
+/* Контейнер карточек */
+
+.reviews-wrapper {
+  display: flex;
+  width: 100%;
+  will-change: transform;
+  /* transition управляется JS */
+}
+/* Адаптация для .reviews-wrapper не требуется */
+
+/* Карточка отзыва */
+
+.review-card {
+  width: 100%;
+  flex-shrink: 0;
+  background: #293038;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #3c4753;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+@media (max-width: 1024px) {
+  .review-card {
+    padding: 1.25rem;
+  }
+}
+@media (max-width: 768px) {
+  .review-card {
+    padding: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .review-card {
+    padding: 0.875rem;
+  }
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+@media (max-width: 768px) {
+  .review-header {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+  }
+}
+@media (max-width: 480px) {
+  .review-header {
+    margin-bottom: 0.75rem;
+  }
+}
+
+.review-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #1978e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .review-avatar {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .review-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+.review-info {
+  flex: 1;
+}
+/* Адаптация для .review-info не требуется */
+
+.review-name {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+}
+@media (max-width: 768px) {
+  .review-name {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .review-name {
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+  }
+}
+
+.review-date {
+  color: #9daab8;
+  font-size: 0.875rem;
+}
+@media (max-width: 480px) {
+  .review-date {
+    font-size: 0.8rem;
+  }
+}
+
+.review-rating {
+  color: #ffd700;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  letter-spacing: 2px;
+}
+@media (max-width: 480px) {
+  .review-rating {
+    font-size: 1rem;
+    margin-top: 0.4rem;
+    letter-spacing: 1px;
+  }
+}
+
+.review-text {
+  color: #e0e0e0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+@media (max-width: 1024px) {
+  .review-text {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .review-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+}
+@media (max-width: 480px) {
+  .review-text {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+}
+
+/* Навигация по отзывам */
+
+.reviews-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+@media (max-width: 768px) {
+  .reviews-navigation {
+    margin-top: 1.5rem;
+    gap: 0.8rem;
+  }
+}
+@media (max-width: 480px) {
+  .reviews-navigation {
+    margin-top: 1rem;
+    gap: 0.6rem;
+  }
+}
+
+.reviews-prev,
+.reviews-next {
+  background: #1978e5;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .reviews-prev,
+  .reviews-next {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .reviews-prev,
+  .reviews-next {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+}
+.reviews-prev:hover,
+.reviews-next:hover {
+  background: #1565c0;
+  transform: scale(1.1);
+}
+.reviews-prev:disabled,
+.reviews-next:disabled {
+  background: #3c4753;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Ссылка на все отзывы */
+
+.all-reviews-link {
+  text-align: center;
+  margin-top: 2rem;
+}
+@media (max-width: 768px) {
+  .all-reviews-link {
+    margin-top: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .all-reviews-link {
+    margin-top: 1rem;
+  }
+}
+
+.show-all-reviews {
+  display: inline-block;
+  background: #1978e5;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+@media (max-width: 480px) {
+  .show-all-reviews {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+.show-all-reviews:hover {
+  background: #1565c0;
+  transform: translateY(-2px);
+}
+
+
+/* --- Секция FAQ --- */
+
+/* Основной контейнер секции с фоном на всю ширину */
+.faq-content {
+  position: relative;
+  z-index: 5;
+  width: 100vw; /* Ширина на всю ширину окна просмотра */
+  /* Используем margin-left для компенсации left: 50% в hero-section, если она применяется */
+  /* margin-left: -50vw; */
+  /* Если hero-section не имеет left: 50%, то margin-left не нужен */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  /* Или используем calc для центрирования, если известна ширина hero-section */
+  /* width: calc(100vw - var(--scrollbar-width, 0px)); */
+  /* margin-left: calc((100vw - 100%) / -2); */
+  
+  background-color: #111418; /* Фоновый цвет на всю ширину */
+  padding: 2rem 0; /* Отступы сверху и снизу */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрируем внутренний контент по горизонтали */
+}
+
+/* Внутренний контейнер с максимальной шириной */
+.faq-content > .container,
+.faq-content-inner { /* Если добавите обертку с таким классом */
+  max-width: 960px; /* Максимальная ширина содержимого */
+  width: 100%; /* Ширина 100% внутри родителя */
+  padding: 0 2rem; /* Боковые отступы */
+  box-sizing: border-box;
+  /* Если дочерние элементы (.faq-title, .faq-list) не растягиваются, добавим */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Заголовок FAQ */
+.faq-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: left; /* По умолчанию выравнивание по левому краю */
+  color: white;
+  width: 100%; /* Растягиваем на ширину родителя */
+  box-sizing: border-box;
+}
+/* Центрируем заголовок только на планшетах и меньше */
+@media (max-width: 1024px) {
+  .faq-title {
+    text-align: center;
+  }
+}
+
+/* Список вопросов FAQ */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Отступы между элементами списка */
+  width: 100%; /* Растягиваем на ширину родителя */
+  box-sizing: border-box;
+}
+
+/* Элемент списка FAQ (details) */
+.faq-item {
+  background-color: #293038;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+  border: 1px solid #3c4753;
+  width: 100%; /* Убедимся, что растягивается */
+  box-sizing: border-box;
+}
+
+/* Заголовок вопроса FAQ (summary) */
+.faq-question {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* font-size: 0.875rem; */
+  /* font-weight: 500; */
+  color: white;
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+/* Галочка FAQ */
+.faq-arrow {
+  flex-shrink: 0;
+  margin-left: 1rem;
+  transition: transform 0.3s ease;
+  color: #1978e5;
+  width: 12px;
+  height: 12px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Скрываем оригинальный SVG внутри .faq-arrow */
+.faq-arrow svg {
+  display: none;
+}
+
+/* Создаем галочку с помощью before */
+.faq-arrow::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+/* Поворачиваем галочку вверх, когда элемент открыт */
+.faq-item[open] .faq-arrow::before {
+  transform: rotate(225deg);
+}
+
+/* Ответ на вопрос FAQ */
+.faq-answer {
+  color: #9daab8;
+  font-size: 1rem;
+  font-weight: normal;
+  margin-top: 0;
+  padding: 0 1rem 1rem 1rem;
+  line-height: 1.6;
+  width: 100%; /* Убедимся, что растягивается */
+  box-sizing: border-box;
+}
+
+/* Контактная информация внизу секции FAQ */
+.faq-contact {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #9daab8;
+  text-decoration: underline;
+  width: 100%; /* Убедимся, что растягивается */
+  box-sizing: border-box;
+}
+
+/* Анимация появления ответа */
+.faq-item[open] .faq-answer {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Адаптация --- */
+
+/* Планшеты */
+@media (max-width: 1024px) {
+  .faq-content {
+    padding: 2rem 0;
+  }
+  .faq-content > .container,
+  .faq-content-inner {
+    padding: 0 1.5rem;
+  }
+  .faq-title {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+  .faq-question {
+    padding: 0.9rem;
+  }
+  .faq-answer {
+    padding: 0 0.9rem 0.9rem 0.9rem;
+  }
+  .faq-arrow {
+    width: 10px;
+    height: 10px;
+    margin-left: 0.75rem;
+  }
+  .faq-arrow::before {
+    width: 7px;
+    height: 7px;
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+  .faq-content {
+    padding: 1.5rem 0;
+  }
+  .faq-content > .container,
+  .faq-content-inner {
+    padding: 0 1rem;
+  }
+  .faq-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .faq-question {
+    padding: 0.875rem;
+    font-size: 1rem;
+  }
+  .faq-answer {
+    font-size: 1rem;
+    padding: 0 0.875rem 0.875rem 0.875rem;
+    line-height: 1.5;
+  }
+  .faq-arrow {
+    width: 10px;
+    height: 10px;
+    margin-left: 0.75rem;
+  }
+  .faq-arrow::before {
+    width: 6px;
+    height: 6px;
+  }
+  .faq-contact {
+    font-size: 0.8125rem;
+  }
+}
+
+/* Очень маленькие экраны (iPhone SE и подобные) */
+@media (max-width: 375px) {
+  .faq-content {
+    padding: 1.2rem 0;
+  }
+  .faq-content > .container,
+  .faq-content-inner {
+    padding: 0 0.75rem;
+  }
+  .faq-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .faq-item {
+    border-radius: 0.375rem;
+  }
+  .faq-question {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+  .faq-answer {
+    font-size: 1rem;
+    padding: 0 0.75rem 0.75rem 0.75rem;
+    line-height: 1.5;
+  }
+  .faq-arrow {
+    width: 8px;
+    height: 8px;
+    margin-left: 0.5rem;
+  }
+  .faq-arrow::before {
+    width: 5px;
+    height: 5px;
+  }
+  .faq-contact {
+    font-size: 0.75rem;
+    margin-top: 0.75rem;
+  }
+}
+
+/* Очень узкие экраны */
+@media (max-width: 320px) {
+  .faq-content {
+    padding: 1rem 0;
+  }
+  .faq-content > .container,
+  .faq-content-inner {
+    padding: 0 0.5rem;
+  }
+  .faq-title {
+    font-size: 1.1rem;
+  }
+  .faq-question {
+    padding: 0.625rem;
+    font-size: 1rem;
+  }
+  .faq-answer {
+    font-size: 1rem;
+    padding: 0 0.625rem 0.625rem 0.625rem;
+  }
+  .faq-arrow {
+    width: 7px;
+    height: 7px;
+  }
+  .faq-arrow::before {
+    width: 4px;
+    height: 4px;
+  }
+}
+
+
+
+.counter-section {
+  display: flex;
+  position: relative;
+  z-index: 5;
+}
+
+.final-section {
+  display: flex;
+  position: relative;
+  z-index: 5;
+}
+
+/* Animation Classes */
+.fade-in-up {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+}
+.fade-in-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s ease;
+}
+.scale-in.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.delay-1 {
+  transition-delay: 0.2s;
+}
+
+.delay-2 {
+  transition-delay: 0.4s;
+}

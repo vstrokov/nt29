@@ -1,0 +1,295 @@
+/* --- Секция методов ремонта (hero-tagmain) --- */
+
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-image-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+  /* transition: opacity 0.5s ease; */ /* Можно убрать, если не используется */
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ключевое свойство для правильного масштабирования */
+  transform-origin: center center;
+  will-change: transform; /* Оставляем для параллакса */
+  /* Убираем transition, так как анимация управляется JS */
+}
+.hero-main {
+  background-color: #111418;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  align-items: center;
+}
+/* .hero-main{
+  position: relative;
+  z-index: 5;
+  background-color: #111418;
+  display: flex;
+  flex-direction: column;
+    align-items: center;
+} */
+.hero-section2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url(https://lh3.googleusercontent.com/aida-public/AB6AXuDHmf5iHiRldjAVwU_ILhMDIcvQ1QHps5yJBwfoJrVRFXbXR1e6izW96fI4Q6PgFmSqa5lrpcYJU3ntoKa_pCFK714-xqJQVDP557v1yxDURHdr7K16rM0OLYuIOvbcpqK-7YzMXvehmKIZqpJGZ99Niuhlvh1ZOH2uUJbsD5vkCtTqm_lt0XE7PhAe_-pqQwM4K5IShyII324UwrfO4qIxTt5PPvIarI3tgLmZuXP8ag5IV2gfrs0jbEisZV6R6Zw_pZkSdtZRtalF    );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 1200px;
+  border-radius: 8px;
+  background-color: #111418;
+  width: 100%;
+  height: 512px;
+  position: relative;
+  z-index: 5;
+}
+
+.hero-inner {
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    /* font-size: 2.5rem; */
+    margin-bottom: 0.5rem;
+  }
+}
+
+.hero-description {
+  color: white;
+  text-align: center;
+  /* margin-top: 30px; */
+}
+
+.hero-cta {
+  background-color: #1978e5;
+  color: white;
+  font-weight: bold;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  width: fit-content;
+  margin-top: 1rem;
+}
+
+.hero-tag {
+  display: flex;
+  padding: 8px;
+  border-radius: 8px;
+  align-items: center;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.hero-tagtext {
+  color: black;
+  margin: 0;
+  text-align: left;
+  margin-left: 16px;
+}
+
+.hero-tagmain {
+  display: flex;
+  flex-direction: column;
+  /* padding: 16px; */
+}
+
+/* --- Секция методов ремонта (hero-tagmain) --- */
+
+.hero-tagmain.hero-main {
+  /* Фон такой же, как у hero-main, без разделительных границ */
+  background-color: #111418;
+  /* padding: 2rem 2rem 3rem 2rem; */
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Контейнер секции методов */
+.repair-methods-section {
+  max-width: 1200px; /* Максимальная ширина */
+  margin: 0 auto;
+}
+
+/* Сетка методов */
+.methods-grid {
+  display: grid;
+  /* По умолчанию 4 карточки в ряд */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem; /* Отступы между карточками */
+  background-color: black;
+  padding: 24px;
+}
+
+/* Карточка метода */
+.method-card {
+  /* background-color: #1c2126;
+  border: 1px solid #3c4753; */
+  border-radius: 0.5rem;
+  overflow: hidden; /* Скрывает содержимое, выходящее за границы borderRadius */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Карточки одной высоты */
+}
+
+/* Эффект при наведении на карточку */
+.method-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Контейнер изображения метода */
+.method-image-container {
+  width: 100%;
+  /* height: 150px; Фиксированная высота изображения (по желанию) */
+  aspect-ratio: 16 / 9; /* Соотношение сторон изображения */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Изображение метода */
+.method-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Изображение заполняет контейнер, обрезая края */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Увеличение изображения при наведении на карточку */
+.method-card:hover .method-image {
+  transform: scale(1.05);
+}
+
+/* Контент метода */
+.method-content {
+  padding: 1rem;
+  flex-grow: 1; /* Занимает оставшееся пространство */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Заголовок метода */
+.method-title {
+  color: white;
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Описание метода */
+.method-description {
+  color: #9daab8;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  flex-grow: 1; /* Текст занимает доступное пространство */
+  text-align: center;
+}
+
+/* --- Адаптация для планшетов --- */
+@media (max-width: 1024px) {
+  .methods-grid {
+    gap: 1rem;
+  }
+
+  .method-content {
+    padding: 0.8rem;
+  }
+
+  .method-title {
+    font-size: 1rem;
+  }
+}
+
+/* --- Адаптация для мобильных устройств --- */
+@media (max-width: 768px) {
+  /* 2 карточки в ряд на мобильных */
+  .methods-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .method-image-container {
+    aspect-ratio: 3 / 2; /* Изменение соотношения сторон для мобильных */
+  }
+}
+
+/* --- Адаптация для очень маленьких экранов --- */
+@media (max-width: 480px) {
+
+  /* 1 карточка в ряд на очень маленьких экранах */
+  .methods-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .method-content {
+    padding: 0.7rem;
+  }
+
+  .method-title {
+    font-size: 1rem;
+  }
+}
+
+/* Why Us Section */
+.why-us {
+  padding: 6rem 3rem;
+  position: relative;
+  z-index: 5;
+  background-color: #111418;
+}
