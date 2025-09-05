@@ -284,3 +284,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Если нужно, можно инициализировать другие компоненты здесь
 });
+document.addEventListener('DOMContentLoaded', function () {
+  const menuToggle = document.getElementById('menuToggle');
+  const menuClose = document.getElementById('menuClose'); // Новая кнопка
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', function () {
+      mobileMenu.classList.toggle('active');
+      this.classList.toggle('active');
+    });
+  }
+
+  // Новый обработчик для кнопки закрытия
+  if (menuClose && mobileMenu) {
+    menuClose.addEventListener('click', function () {
+      mobileMenu.classList.remove('active');
+      // Также убираем класс active с иконки гамбургера, если она его имеет
+      if (menuToggle && menuToggle.classList.contains('active')) {
+        menuToggle.classList.remove('active');
+      }
+    });
+  }
+});
