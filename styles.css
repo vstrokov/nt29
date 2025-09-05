@@ -125,7 +125,7 @@ h6 {
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column; /* Располагаем элементы вертикально */
-    align-items: start; /* Центрируем содержимое */
+    /* align-items: start; Центрируем содержимое */
     padding: 15px 20px 30px 20px; /* Уменьшаем боковые отступы, увеличиваем нижний */
     /* gap: 20px; Отступ между элементами */
   }
@@ -283,7 +283,7 @@ h6 {
   }
 }
 
-/* Мобильное меню - выпадающее */
+/* Мобильное меню - выпадающее (теперь Fixed) */
 .nav-mobile {
   display: none;
   flex-direction: column;
@@ -291,16 +291,25 @@ h6 {
   padding: 20px;
   gap: 15px;
   border-top: 1px solid #3c4753;
+  /* --- Ключевые изменения для позиционирования сверху и вне потока --- */
+  position: fixed; /* Фиксируем относительно viewport */
+  top: 0; /* Прилепляем к верху экрана */
+  left: 0;
+  right: 0;
+  z-index: 1001; /* Убедимся, что оно поверх других элементов */
+  /* --------------------------------------------------------------- */
+  /* Добавим немного отступа сверху, если хедер не покрывает полностью */
+  /* top: 60px; */ /* Пример, подбирается экспериментально */
 }
+
 @media (max-width: 768px) {
-  .nav-mobile {
-    display: none;
-  }
+
   .nav-mobile.active {
-    display: flex;
+    display: flex; /* Показываем при активном классе */
   }
 }
 
+/* Также убедимся, что ссылки внутри меню выглядят правильно */
 .nav-mobile a {
   color: white;
   text-decoration: none;
@@ -311,7 +320,17 @@ h6 {
 .nav-mobile a:last-child {
   border-bottom: none;
 }
-
+.mobile-menu-close {
+  align-self: flex-end; /* Прижимаем кнопку вправо */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 0 15px 0; /* Отступ снизу */
+  line-height: 1;
+}
 /* Hero Section */
 /* Hero Section */
 .hero-section {
